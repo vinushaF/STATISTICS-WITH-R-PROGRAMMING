@@ -1,0 +1,19 @@
+# 16. Create matrices of different sizes and fill them by rows and columns
+
+# 5x4 matrix filled by rows
+matrix1 <- matrix(1:20, nrow = 5, byrow = TRUE)
+
+# 3x3 matrix with labels filled by rows
+matrix2 <- matrix(21:29, nrow = 3, byrow = TRUE, dimnames = list(c("Row1", "Row2", "Row3"), c("Col1", "Col2", "Col3")))
+
+# 2x2 matrix with labels filled by columns
+matrix3 <- matrix(31:34, nrow = 2, byrow = FALSE, dimnames = list(c("Row1", "Row2"), c("Col1", "Col2")))
+
+cat("Matrix 1 (5x4):\n")
+print(matrix1)
+
+cat("Matrix 2 (3x3 with labels):\n")
+print(matrix2)
+
+cat("Matrix 3 (2x2 with labels):\n")
+print(matrix3)
