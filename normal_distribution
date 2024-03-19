@@ -1,0 +1,10 @@
+# 14. Create a list of random numbers in a normal distribution and count occurrences of each value
+
+# Generate random numbers
+random_numbers <- rnorm(100)
+
+# Count occurrences of each value
+occurrences <- table(random_numbers)
+
+cat("Occurrences of each value:\n")
+print(occurrences)
