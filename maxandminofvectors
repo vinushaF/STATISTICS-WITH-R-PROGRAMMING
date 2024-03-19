@@ -1,0 +1,9 @@
+# 10. Program to find the maximum and minimum values of a given vector
+
+vector <- c(3, 7, 1, 9, 2, 5)
+
+max_value <- max(vector)
+min_value <- min(vector)
+
+cat("Maximum value:", max_value, "\n")
+cat("Minimum value:", min_value, "\n")
