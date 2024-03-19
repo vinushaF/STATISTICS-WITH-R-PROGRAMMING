@@ -1,0 +1,13 @@
+# 3. Program to create sequences and perform calculations
+
+# Sequence from 20 to 50
+seq1 <- 20:50
+
+# Mean of numbers from 20 to 60
+mean1 <- mean(20:60)
+
+# Sum of numbers from 51 to 91
+sum1 <- sum(51:91)
+
+cat("Mean of numbers from 20 to 60:", mean1, "\n")
+cat("Sum of numbers from 51 to 91:", sum1, "\n")
