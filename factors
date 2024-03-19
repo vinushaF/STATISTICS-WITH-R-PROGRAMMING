@@ -1,0 +1,11 @@
+# 9. Program to find the factors of a given number
+
+number <- as.integer(readline(prompt = "Enter a number: "))
+
+factors <- function(x) {
+  vec <- 1:x
+  vec[x %% vec == 0]
+}
+
+result <- factors(number)
+cat("Factors of", number, ":", result, "\n")
