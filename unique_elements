@@ -1,0 +1,10 @@
+# 11. Program to get the unique elements of a given string and vector
+
+given_string <- "hellohello"
+unique_chars <- unique(strsplit(given_string, "")[[1]])
+
+given_vector <- c(1, 2, 3, 2, 1, 4)
+unique_numbers <- unique(given_vector)
+
+cat("Unique characters in string:", unique_chars, "\n")
+cat("Unique numbers in vector:", unique_numbers, "\n")
