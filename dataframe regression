@@ -1,0 +1,10 @@
+# (a) Create a data frame based on below table
+data_frame <- data.frame(Month = 1:12, Spends = c(1000, 4000, 5000, 4500, 3000, 4000, 9000, 11000, 15000, 12000, 7000, 3000), Sales = c(9914, 40487, 54324, 50044, 34719, 42551, 94871, 118914, 158484, 131348, 78504, 36284))
+
+# (b) Create a regression model for that data frame table to show the amount of sales(Sales) based on how much the company spends (Spends) in advertising
+lm_model <- lm(Sales ~ Spends, data = data_frame)
+summary(lm_model)
+
+# (c) Predict the Sales if Spend=13500
+predicted_sales <- predict(lm_model, newdata = data.frame(Spends = 13500))
+print(predicted_sales)
