@@ -1,0 +1,10 @@
+# Define vectors, matrices, and a function
+vector <- c(1, 2, 3)
+matrix <- matrix(1:9, nrow = 3)
+my_function <- function(x) { return(x^2) }
+
+# Create a list
+my_list <- list(vector = vector, matrix = matrix, function_output = my_function(3))
+
+# Print the content of the list
+print(my_list)
