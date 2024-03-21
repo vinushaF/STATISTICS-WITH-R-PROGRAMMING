@@ -1,0 +1,8 @@
+# Load the women dataset
+data(women)
+
+# Create a factor corresponding to height
+height_factor <- cut(women$height, breaks = 5)
+
+# Print the factor
+print(height_factor)
