@@ -1,0 +1,16 @@
+# (i) Mean, Median, Mode
+values <- c(90, 50, 70, 80, 70, 60, 20, 30, 80, 90, 20)
+mean(values)
+median(values)
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+Mode(values)
+
+# (ii) 2nd highest and 3rd lowest value
+sorted_values <- sort(unique(values))
+second_highest <- sorted_values[length(sorted_values) - 1]
+third_lowest <- sorted_values[3]
+print(second_highest)
+print(third_lowest)
