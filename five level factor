@@ -1,0 +1,8 @@
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate a random sample of 5 levels from the LETTERS dataset
+sample_levels <- sample(LETTERS, 5)
+
+# Print the sampled levels
+print(sample_levels)
