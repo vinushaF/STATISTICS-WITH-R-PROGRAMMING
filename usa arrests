@@ -1,0 +1,32 @@
+# Load USArrests dataset
+data(USArrests)
+
+# (i) a. Explore the summary of Data set, like number of Features and its type. Find the number of records for each feature. Print the statistical feature of data
+summary(USArrests)
+
+# b. Print the state which saw the largest total number of rape
+print(rownames(USArrests)[which.max(USArrests$Rape)])
+
+# c. Print the states with the max & min crime rates for murder
+print(rownames(USArrests)[which.max(USArrests$Murder)])
+print(rownames(USArrests)[which.min(USArrests$Murder)])
+
+# (ii) a. Find the correlation among the features
+correlation_matrix <- cor(USArrests)
+print(correlation_matrix)
+
+# b. Print the states which have assault arrests more than median of the country
+print(rownames(USArrests)[USArrests$Assault > median(USArrests$Assault)])
+
+# c. Print the states are in the bottom 25% of murder
+print(rownames(USArrests)[USArrests$Murder < quantile(USArrests$Murder, 0.25)])
+
+# (iii) a. Create a histogram and density plot of murder arrests by US state
+hist(USArrests$Murder, main = "Histogram of Murder Arrests", xlab = "Murder Arrests")
+lines(density(USArrests$Murder), col = "red")
+
+# b. Create the plot that shows the relationship between murder arrest rate and proportion of the population that is urbanised by state. Then enrich the chart by adding assault arrest rates (by colouring the points from blue (low) to red (high)).
+plot(USArrests$UrbanPop, USArrests$Murder, col = USArrests$Assault, main = "Murder Arrest Rate vs Urban Population", xlab = "Urban Population", ylab = "Murder Arrest Rate", pch = 20)
+
+# c. Draw a bar graph to show the murder rate for each of the 50 states.
+barplot(USArrests$Murder, names.arg = rownames(USArrests), las = 2, main = "Murder Rate by State", xlab = "State", ylab = "Murder Rate")
