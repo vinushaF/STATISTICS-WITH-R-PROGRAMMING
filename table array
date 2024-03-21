@@ -1,0 +1,9 @@
+# Two input vectors
+vector1 <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)
+vector2 <- c(9, 8, 7, 6, 5, 4, 3, 2, 1)
+
+# Create the array
+my_array <- array(c(vector1, vector2), dim = c(3, 3, 2))
+
+# Print the array
+print(my_array)
