@@ -1,0 +1,37 @@
+# Load the ChickWeight dataset
+data(ChickWeight)
+
+# (i) Order the data frame in ascending order by feature name “weight” grouped by feature “diet” and Extract the last 6 records from order data frame.
+ordered_data <- ChickWeight[order(ChickWeight$weight, ChickWeight$diet), ]
+last_six_records <- tail(ordered_data, 6)
+print(last_six_records)
+
+# (ii) Perform melting function based on “Chick", "Time", "Diet" features as ID variables
+melted_data <- melt(ChickWeight, id.vars = c("Chick", "Time", "Diet"))
+
+# (iiia) Perform cast function to display the mean value of weight grouped by Diet
+casted_mean_weight <- dcast(melted_data, Diet ~ ., fun.aggregate = mean)
+print(casted_mean_weight)
+
+# (iiib) Perform cast function to display the mode of weight grouped by Diet
+casted_mode_weight <- dcast(melted_data, Diet ~ ., fun.aggregate = Mode)
+print(casted_mode_weight)
+
+# (iii) Create Box plot for “weight” grouped by “Diet”
+boxplot(weight ~ Diet, data = ChickWeight)
+
+# (iv) Create a Histogram for “weight” features belong to Diet- 1 category
+hist(ChickWeight$weight[ChickWeight$Diet == 1], main = "Histogram of Weight for Diet 1")
+
+# (v) Create Scatter plot for “ weight” vs “Time” grouped by Diet
+plot(ChickWeight$Time, ChickWeight$weight, col = ChickWeight$Diet, xlab = "Time", ylab = "Weight", main = "Scatter plot of Weight vs Time by Diet")
+
+# (a) Create Box plot for “weight” grouped by “Diet”
+boxplot(weight ~ Diet, data = ChickWeight)
+
+# (b) Create a Histogram for “weight” features belong to Diet- 1 category
+hist(ChickWeight$weight[ChickWeight$Diet == 1], main = "Histogram of Weight for Diet 1")
+
+# (c) Create Scatter plot for “ weight” vs “Time” grouped by Diet
+plot(ChickWeight$Time, ChickWeight$weight, col = ChickWeight$Diet, xlab = "Time", ylab = "Weight", main = "Scatter plot of Weight vs Time by Diet")
+
