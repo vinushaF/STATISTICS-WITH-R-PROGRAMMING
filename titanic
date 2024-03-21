@@ -1,0 +1,12 @@
+# Load Titanic dataset
+data(Titanic)
+
+# (a) Draw a Bar chart to show details of “Survived” on the Titanic based on passenger Class
+barplot(Titanic[,,,"Yes"], beside = TRUE, col = c("red", "green"), main = "Survived Passengers by Class", xlab = "Class", ylab = "Number of Passengers")
+
+# (b) Modify the above plot based on gender of people who survived
+barplot(Titanic[,,"Female","Yes"], beside = TRUE, col = c("red", "green"), main = "Female Survived Passengers by Class", xlab = "Class", ylab = "Number of Passengers")
+barplot(Titanic[,,"Male","Yes"], beside = TRUE, col = c("red", "green"), main = "Male Survived Passengers by Class", xlab = "Class", ylab = "Number of Passengers")
+
+# (c) Draw histogram plot to show distribution of feature “Age”
+hist(Titanic$Age, main = "Histogram of Age", xlab = "Age")
