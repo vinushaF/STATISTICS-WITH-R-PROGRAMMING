@@ -1,0 +1,17 @@
+# Load necessary library
+library(stats)
+
+# Load ChickWeight dataset
+data(ChickWeight)
+
+# (a) Create multi regression model to find weight of the chicken, by “Time” and “Diet” as predictor variables
+multi_reg_model <- lm(weight ~ Time + Diet, data = ChickWeight)
+
+# (b) Predict weight for Time=10 and Diet=1
+predicted_weight <- predict(multi_reg_model, newdata = data.frame(Time = 10, Diet = 1))
+print(predicted_weight)
+
+# (c) Find the error in model for same
+actual_weight <- subset(ChickWeight, Time == 10 & Diet == 1)$weight
+error <- actual_weight - predicted_weight
+print(error)
