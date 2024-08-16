@@ -1,0 +1,21 @@
+# Create three arrays (3x3 each for example)
+array1 <- matrix(1:9, nrow = 3, ncol = 3)
+array2 <- matrix(10:18, nrow = 3, ncol = 3)
+array3 <- matrix(19:27, nrow = 3, ncol = 3)
+
+# Print the original arrays
+cat("Array 1:\n")
+print(array1)
+cat("\nArray 2:\n")
+print(array2)
+cat("\nArray 3:\n")
+print(array3)
+
+# Combine the arrays by stacking rows
+combined_array <- rbind(array1[1,], array2[1,], array3[1,],
+                        array1[2,], array2[2,], array3[2,],
+                        array1[3,], array2[3,], array3[3,])
+
+# Print the combined array
+cat("\nCombined Array:\n")
+print(combined_array)
